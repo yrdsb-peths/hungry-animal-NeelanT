@@ -3,7 +3,14 @@ import greenfoot.Actor;
 public class Apple extends Actor
 {
     public void act() {
-        this.setLocation(getX(), getY() + 1);
+        setLocation(getX(), getY() + 2);
         
+        if(getY() >= getWorld().getHeight())
+        {
+            MyWorld world = (MyWorld)getWorld();
+            world.removeObject(this);
+            world.gameOver();
+            
+        }
     }
 }
