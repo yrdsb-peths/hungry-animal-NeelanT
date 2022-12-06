@@ -3,6 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class MyWorld extends World
 {
+    Label score;
+    int counter = 0;
 
     public MyWorld()
     {    
@@ -11,6 +13,8 @@ public class MyWorld extends World
         Elephant elephant = new Elephant();
         addObject(elephant, 40, 200);
         spawnApple();
+        score = new Label(counter, 60);
+        addObject(score, getWidth()/2, 50);
 
     }
     public void spawnApple()
@@ -18,5 +22,11 @@ public class MyWorld extends World
         Apple apple = new Apple();
 
         addObject(apple, Greenfoot.getRandomNumber(getWidth()), 0);
+    }
+    public void increaseScore()
+    {
+        counter++;
+        score.setValue(counter);
+        
     }
 }

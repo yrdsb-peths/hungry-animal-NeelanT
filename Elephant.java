@@ -5,25 +5,28 @@ public class Elephant extends Actor
 {
     public void act() {
         if (Greenfoot.isKeyDown("a")) {
-            this.move(-4);
+            move(-4);
         }
         if (Greenfoot.isKeyDown("d")) {
-            this.move(4);
+            move(4);
         }
         if (Greenfoot.isKeyDown("s")) {
-            this.setLocation(this.getX(), this.getY() + 4);
+            setLocation(getX(), getY() + 4);
         }
         if (Greenfoot.isKeyDown("w")) {
-            this.setLocation(this.getX(), this.getY() - 4);
+            setLocation(getX(), getY() - 4);
         }
-        if (this.isTouching((Class)Apple.class)) {
-            this.eat();
+        if (isTouching(Apple.class)) 
+        {
+            eat();
         }
     }
     
     public void eat() {
-        this.removeTouching((Class)Apple.class);
-        final MyWorld world = (MyWorld)this.getWorld();
+        removeTouching(Apple.class);
+        MyWorld world = (MyWorld)getWorld();
         world.spawnApple();
+        world.increaseScore();
+        
     }
 }
