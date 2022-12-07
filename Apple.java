@@ -1,4 +1,4 @@
-import greenfoot.Actor;
+import greenfoot.*;
 
 public class Apple extends Actor
 {

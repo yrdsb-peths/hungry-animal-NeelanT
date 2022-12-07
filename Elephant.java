@@ -1,8 +1,9 @@
-import greenfoot.Greenfoot;
-import greenfoot.Actor;
+
+import greenfoot.*;
 
 public class Elephant extends Actor
 {
+    GreenfootSound sound = new GreenfootSound("sounds/elephantcub.mp3");
     public void act() {
         if (Greenfoot.isKeyDown("a")) {
             move(-4);
@@ -25,6 +26,7 @@ public class Elephant extends Actor
     public void eat() {
         removeTouching(Apple.class);
         MyWorld world = (MyWorld)getWorld();
+        sound.play();
         world.spawnApple();
         world.increaseScore();
         
