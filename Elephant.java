@@ -28,11 +28,11 @@ public class Elephant extends Actor
     public void act() {
         animate();
         if (Greenfoot.isKeyDown("a")) {
-            move(-4);
+            move(-6);
             facing = "left";
         }
         if (Greenfoot.isKeyDown("d")) {
-            move(4);
+            move(6);
             facing = "right";
         }
         if (Greenfoot.isKeyDown("s")) {
@@ -52,8 +52,9 @@ public class Elephant extends Actor
         removeTouching(Apple.class);
         MyWorld world = (MyWorld)getWorld();
         sound.play();
-        world.spawnApple();
         world.increaseScore();
+        world.spawnApple();
+        
 
     }
     int i = 0;

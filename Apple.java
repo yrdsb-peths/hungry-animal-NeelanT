@@ -2,8 +2,16 @@
 
 public class Apple extends Actor
 {
-    
     int speed = 1;
+    public Apple(boolean isGolden)
+    {
+        if(isGolden)
+        {
+            setImage("images/apple2.png");
+        }
+        
+        
+    }
     public void act() {
         setLocation(getX(), getY() + speed);
         
