@@ -3,6 +3,7 @@ import greenfoot.*;
 
 public class Elephant extends Actor
 {
+    int level = 1;
     String facing = "right";
     SimpleTimer timer = new SimpleTimer();
     GreenfootImage [] images = new GreenfootImage[8];
@@ -53,7 +54,7 @@ public class Elephant extends Actor
         sound.play();
         world.spawnApple();
         world.increaseScore();
-        
+
     }
     int i = 0;
     public void animate()

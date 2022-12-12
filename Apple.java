@@ -2,10 +2,10 @@
 
 public class Apple extends Actor
 {
-    int level = 1;
+    
     int speed = 1;
     public void act() {
-        setLocation(getX(), getY() + 2);
+        setLocation(getX(), getY() + speed);
         
         if(getY() >= getWorld().getHeight())
         {
@@ -14,6 +14,12 @@ public class Apple extends Actor
             world.gameOver();
             
         }
+    }
+    
+    public void setSpeed(int spd)
+    {
+        speed = spd;
+        
     }
 
 }

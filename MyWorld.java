@@ -5,7 +5,7 @@ public class MyWorld extends World
 {
     Label score;
     int counter = 0;
-
+    int level = 1;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -20,7 +20,7 @@ public class MyWorld extends World
     public void spawnApple()
     {
         Apple apple = new Apple();
-
+        apple.setSpeed(level);
         addObject(apple, Greenfoot.getRandomNumber(getWidth()), 0);
     }
     public void gameOver()
@@ -32,6 +32,9 @@ public class MyWorld extends World
     {
         counter++;
         score.setValue(counter);
-        
+        if(counter % 5 == 0)
+        {
+            level++;
+        }
     }
 }
