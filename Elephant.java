@@ -1,6 +1,7 @@
 
 import greenfoot.*;
 
+
 public class Elephant extends Actor
 {
     int level = 1;
